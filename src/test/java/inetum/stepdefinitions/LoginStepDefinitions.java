@@ -1,13 +1,19 @@
 package inetum.stepdefinitions;
 
+import inetum.tasks.IniciarSesionTask;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import net.serenitybdd.screenplay.actors.OnStage;
 
 
-public class loginStepdefinitions {
+
+public class LoginStepDefinitions {
 
     @When("^el usuario inicia sesión con el usuario (.*) y contraseña (.*)")
-    public void el_usuario_inicia_sesión_con_el_usuario_standard_user_y_contraseña_secret_sauce(String user, String pass) {
+    public void el_usuario_inicia_sesión_con_el_usuario_y_contraseña(String user, String pass) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                IniciarSesionTask.sending(user, pass)
+        );
     }
 
     @Then("el usuario debería ser redirigido a la página de productos")

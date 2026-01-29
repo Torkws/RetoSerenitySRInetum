@@ -1,12 +1,12 @@
 package inetum.actors;
 
+import inetum.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
-public class definitionActors {
+public class DefinitionActors {
 
     public static Actor actor;
 

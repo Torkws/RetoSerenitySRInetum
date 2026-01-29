@@ -8,19 +8,21 @@ import net.serenitybdd.screenplay.actions.Open;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class navegarPaginaTask implements Task {
+public class NavegarPaginaTask implements Task {
     private final String url;
 
-    public navegarPaginaTask(String url) {
+    public NavegarPaginaTask(String url) {
         this.url = url;
     }
     @Override
     @Step("{0} Navega a la página: #url")
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Open.url(url));
+        actor.attemptsTo(
+                Open.url(url)
+        );
     }
 
     public static Performable sending(String url) {
-        return instrumented(navegarPaginaTask.class, url);
+        return instrumented(NavegarPaginaTask.class, url);
     }
 }
