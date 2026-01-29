@@ -20,7 +20,7 @@ public class LoginStepDefinitions {
         );
     }
 
-    @When("^el usuario inicia sesión con el usuario (.*) y contraseña (.*)")
+    @When("^el usuario inicia sesión con usuario (.*) y contraseña (.*)")
     public void el_usuario_inicia_sesión_con_el_usuario_y_contraseña(String user, String pass) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 IniciarSesionTask.sending(user, pass)

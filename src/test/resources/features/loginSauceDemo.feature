@@ -17,7 +17,7 @@ Feature: Funcionalidad de Login para E-commerce de Sauce Demo
 
     @saucedemo @login @E02 @unhappyPath
   Scenario Outline: Validar mensaje de error al intentar iniciar sesión con usuario bloqueado o credenciales inválidas
-    When el usuario inicia sesión con el usuario <user> y contraseña <pass>
+    When el usuario inicia sesión con usuario <user> y contraseña <pass>
     Then se debería mostrar un mensaje de error de login <messageError>
     Examples:
       | user            | pass         | messageError                                                              |
