@@ -30,9 +30,6 @@ public class InputInteraction implements Interaction {
         return new InputInteraction(value, null);
     }
 
-    /**
-     * Método para especificar el target donde se ingresará el valor
-     */
     public InputInteraction into(Target target) {
         return instrumented(InputInteraction.class, this.value, target);
     }

@@ -12,9 +12,7 @@ import org.openqa.selenium.WebElement;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 /**
- * Clase de Interactions para manejar scrolls en el sistema.
- * Las Interactions son acciones atómicas y reutilizables del patrón Screenplay.
- *
+
  * Proporciona diferentes tipos de scroll:
  * - Scroll a un elemento específico
  * - Scroll hacia arriba

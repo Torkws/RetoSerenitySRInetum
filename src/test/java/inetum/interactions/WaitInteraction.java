@@ -13,13 +13,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClic
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 
-/**
- * Clase de Interactions para manejar esperas en el sistema.
- * Las Interactions son acciones atómicas y reutilizables del patrón Screenplay.
- *
- * Utiliza WebDriverWait en lugar de Thread.sleep() para esperas inteligentes
- * que terminan cuando se cumplen las condiciones esperadas.
- */
+
 public class WaitInteraction implements Interaction {
 
     // Enumeración para definir los tipos de espera
