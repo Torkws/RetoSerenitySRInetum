@@ -1,5 +1,8 @@
 package inetum.tasks;
 
+import inetum.interactions.ClickInteraction;
+import inetum.interactions.InputInteraction;
+import inetum.interactions.WaitInteraction;
 import inetum.ui.LoginPage;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
@@ -27,9 +30,13 @@ public class IniciarSesionTask implements Task {
     @Step("{0} inicia sesión correctamente: ")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(username).into(LoginPage.USERNAME_FIELD),
-                Enter.theValue(password).into(LoginPage.PASSWORD_FIELD),
-                Click.on(LoginPage.LOGIN_BUTTON)
+                WaitInteraction.forElementToBeVisible(LoginPage.LOGIN_LOGO),
+                WaitInteraction.forElementToBeClickable(LoginPage.USERNAME_FIELD),
+                InputInteraction.withValue(username).into(LoginPage.USERNAME_FIELD),
+                WaitInteraction.forElementToBeClickable(LoginPage.PASSWORD_FIELD),
+                InputInteraction.withValue(password).into(LoginPage.PASSWORD_FIELD),
+                WaitInteraction.forElementToBeClickable(LoginPage.LOGIN_BUTTON),
+                ClickInteraction.on(LoginPage.LOGIN_BUTTON, "botón Iniciar Sesión")
         );
     }
 }

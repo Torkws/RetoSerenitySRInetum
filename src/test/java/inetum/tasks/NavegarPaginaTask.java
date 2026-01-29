@@ -4,7 +4,7 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Open;
+import inetum.interactions.NavigationInteraction;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -18,7 +18,7 @@ public class NavegarPaginaTask implements Task {
     @Step("{0} Navega a la página: #url")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Open.url(url)
+                NavigationInteraction.to(url)
         );
     }
 

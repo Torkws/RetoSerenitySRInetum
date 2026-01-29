@@ -1,6 +1,5 @@
 package inetum.stepdefinitions;
 
-import inetum.actors.DefinitionActors;
 import inetum.tasks.NavegarPaginaTask;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.actors.OnStage;
