@@ -4,12 +4,21 @@ import inetum.questions.CommonQuestions;
 import inetum.tasks.IniciarSesionTask;
 import inetum.ui.CommonPage;
 import inetum.ui.InventoyPage;
+import inetum.utils.Credentials;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class LoginStepDefinitions {
+
+    @When("^el usuario inicia sesión con el usuario (.*)$")
+    public void el_usuario_inicia_sesión_con_el_usuario(String user) {
+        String password = Credentials.getPassword(user);
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                IniciarSesionTask.sending(user, password)
+        );
+    }
 
     @When("^el usuario inicia sesión con el usuario (.*) y contraseña (.*)")
     public void el_usuario_inicia_sesión_con_el_usuario_y_contraseña(String user, String pass) {

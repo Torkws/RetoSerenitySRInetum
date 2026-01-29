@@ -1,5 +1,6 @@
 package inetum.questions;
 
+import inetum.interactions.WaitInteraction;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.Actor;
@@ -27,6 +28,9 @@ public class CommonQuestions implements Question<Boolean> {
     public static Question<Boolean> checkIfObjectIsDisplayed(Target target) {
         return Question.about("✓ Verificar que el elemento está visible: " + target.getName())
                 .answeredBy(actor -> {
+                    actor.attemptsTo(
+                            WaitInteraction.forElementToBeVisible(target)
+                    );
                     try {
                         return the(target)
                                 .answeredBy(actor)
@@ -40,6 +44,9 @@ public class CommonQuestions implements Question<Boolean> {
     public static Question<Boolean> checkIfObjectIsDisplayed(Target target, String message) {
         return Question.about("✓ " + message)
                 .answeredBy(actor -> {
+                    actor.attemptsTo(
+                            WaitInteraction.forElementToBeVisible(target)
+                    );
                     try {
                         return the(target)
                                 .answeredBy(actor)
@@ -53,6 +60,9 @@ public class CommonQuestions implements Question<Boolean> {
     public static Question<String> getObjectText(Target target) {
         return Question.about("✓ Obtener el texto del elemento: " + target.getName())
                 .answeredBy(actor -> {
+                    actor.attemptsTo(
+                            WaitInteraction.forElementToBeVisible(target)
+                    );
                     try {
                         return the(target)
                                 .answeredBy(actor)
@@ -63,10 +73,12 @@ public class CommonQuestions implements Question<Boolean> {
                 });
     }
 
-
     public static Question<String> getObjectText(Target target, String message) {
         return Question.about("✓ " + message)
                 .answeredBy(actor -> {
+                    actor.attemptsTo(
+                            WaitInteraction.forElementToBeVisible(target)
+                    );
                     try {
                         return the(target)
                                 .answeredBy(actor)

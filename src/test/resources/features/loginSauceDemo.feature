@@ -5,14 +5,14 @@ Feature: Funcionalidad de Login para E-commerce de Sauce Demo
 
     @saucedemo @login @E01 @happyPath
   Scenario Outline: Inicio de sesión exitoso con credenciales válidas
-    When el usuario inicia sesión con el usuario <user> y contraseña <pass>
+    When el usuario inicia sesión con el usuario <user>
     Then el usuario debería ser redirigido a la página de productos
     And el inventario de productos debería ser visible
     Examples:
-      | user                    | pass         |
-      | standard_user           | secret_sauce |
-      | problem_user            | secret_sauce |
-      | performance_glitch_user | secret_sauce |
+      | user                    |
+      | standard_user           |
+      | problem_user            |
+      | performance_glitch_user |
 
 
     @saucedemo @login @E02 @unhappyPath
