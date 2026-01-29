@@ -1,14 +1,10 @@
 package inetum.stepdefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 
 
 public class loginStepdefinitions {
-    @Given("que el usuario navega a la página de inicio de sesión de Sauce Demo")
-    public void que_el_usuario_navega_a_la_página_de_inicio_de_sesión_de_sauce_demo() {
-    }
 
     @When("^el usuario inicia sesión con el usuario (.*) y contraseña (.*)")
     public void el_usuario_inicia_sesión_con_el_usuario_standard_user_y_contraseña_secret_sauce(String user, String pass) {
