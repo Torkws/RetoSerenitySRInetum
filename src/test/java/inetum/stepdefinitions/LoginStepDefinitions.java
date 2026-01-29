@@ -3,7 +3,7 @@ package inetum.stepdefinitions;
 import inetum.questions.CommonQuestions;
 import inetum.tasks.IniciarSesionTask;
 import inetum.ui.CommonPage;
-import inetum.ui.InventoyPage;
+import inetum.ui.InventoryPage;
 import inetum.utils.Credentials;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -31,7 +31,7 @@ public class LoginStepDefinitions {
     public void el_usuario_debería_ser_redirigido_a_la_página_de_productos() {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 Ensure.that(CommonQuestions.checkIfObjectIsDisplayed(
-                        InventoyPage.INVENTORY_PAGE_TITLE,
+                        InventoryPage.INVENTORY_PAGE_TITLE,
                         "El usuario fue redirigido a la página de productos - Validando título"
                 ))
                         .isTrue()
@@ -42,7 +42,7 @@ public class LoginStepDefinitions {
     public void el_inventario_de_productos_debería_ser_visible() {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 Ensure.that(CommonQuestions.checkIfObjectIsDisplayed(
-                        InventoyPage.PRODUCTS_INVENTORY,
+                        InventoryPage.PRODUCTS_INVENTORY,
                         "El inventario de productos es visible en la página"
                 ))
                         .isTrue()

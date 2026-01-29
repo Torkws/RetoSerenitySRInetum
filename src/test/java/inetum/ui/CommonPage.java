@@ -15,6 +15,9 @@ public class CommonPage {
 
     public static final Target ERROR_MESSAGE_LOGIN_CSS = Target.the("mensaje de error de login (CSS)")
             .located(By.cssSelector("div.error-message-container h3"));
+
+    public static Target CART_ICON = Target.the("Icono del carrito de compras")
+            .locatedBy("//a[@class='shopping_cart_link']");
 }
 
 
