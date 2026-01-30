@@ -22,6 +22,7 @@ public class CheckoutPage {
     public static Target ERROR_MESSAGE_CHECKOUT = Target.the("Mensaje de error en checkout")
             .locatedBy("//div[contains(@class, 'error-message-container') and contains(@class, 'error')]//h3[@data-test='error']");
 
+    public static final String TITLE_ORDER_COMPLETE_EXPECTED = "Checkout: Complete!";
 
 
     public static Target BACK_BUTTON = Target.the("Botón de volver a productos")

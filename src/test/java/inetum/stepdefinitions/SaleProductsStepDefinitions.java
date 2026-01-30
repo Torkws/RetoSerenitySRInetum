@@ -55,7 +55,9 @@ public class SaleProductsStepDefinitions {
 
     @And("debería visualizar la confirmación de la compra")
     public void deberiaVisualizarLaConfirmacionDeLaCompra() {
-
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ValidarConfirmacionCompraTask.validar()
+        );
     }
 
     @And("^debería ver el mensaje de compra exitosa (.*)$")

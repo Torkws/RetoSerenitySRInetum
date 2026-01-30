@@ -3,7 +3,7 @@ Feature: Funcionalidad de compra y gestión del carrito de productos en Sauce De
   Background:
     Given que el usuario navega a la página de inicio de sesión de Sauce Demo
 
-  @test @E2E @E03 @happyPath
+  @saucedemo @E2E @E03 @happyPath
   Scenario Outline: Realiza compra exitosa de productos en SauceDemo
     When el usuario inicia sesión con el usuario standard_user
     And agrega <cantidad> productos con el filtro <filter> al carrito
