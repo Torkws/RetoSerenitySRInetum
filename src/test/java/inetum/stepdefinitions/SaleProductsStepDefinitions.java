@@ -1,11 +1,16 @@
 package inetum.stepdefinitions;
 
 import inetum.models.CarritoInfo;
+import inetum.questions.CommonQuestions;
 import inetum.tasks.*;
+import inetum.ui.CheckoutPage;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 import java.util.List;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class SaleProductsStepDefinitions {
 
@@ -62,7 +67,10 @@ public class SaleProductsStepDefinitions {
 
     @And("^debería ver el mensaje de compra exitosa (.*)$")
     public void deberiaVerElMensaje(String mensajeEsperado) {
-
+        OnStage.theActorInTheSpotlight().should(
+                seeThat("El mensaje de error es correcto:",
+                        CommonQuestions.getObjectText(CheckoutPage.CONFIRMATION_MESSAGE), equalTo(mensajeEsperado))
+        );
     }
 
 

@@ -1,5 +1,4 @@
 # Maven
-target/
 *.jar
 *.pom
 *.pom.asc
