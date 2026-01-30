@@ -1,5 +1,6 @@
 package inetum.tasks;
 
+import inetum.interactions.WaitInteraction;
 import inetum.models.CarritoInfo;
 import inetum.ui.InventoryPage;
 import inetum.ui.CommonPage;
@@ -42,14 +43,12 @@ public class AgregaProductosTask implements Task {
         nombresProductos.forEach(nombreProducto -> {
             System.out.println("  ✓ Agregando: " + nombreProducto);
             actor.attemptsTo(
+                    WaitInteraction.forElementToBeClickable(InventoryPage.getProductAddButton(nombreProducto)),
                     ClickInteraction.on(InventoryPage.getProductAddButton(nombreProducto))
             );
         });
         System.out.println("✓ Productos agregados exitosamente");
 
-        actor.attemptsTo(
-                ClickInteraction.on(CommonPage.CART_ICON)
-        );
 
     }
 }
