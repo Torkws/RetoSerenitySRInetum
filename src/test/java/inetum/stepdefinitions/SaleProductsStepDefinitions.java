@@ -3,6 +3,7 @@ package inetum.stepdefinitions;
 import inetum.models.CarritoInfo;
 import inetum.tasks.AgregaProductosTask;
 import inetum.tasks.ObtieneProductosByFilter;
+import inetum.tasks.RealizaCheckoutTask;
 import inetum.tasks.VisualizaProductosEnCarritoTask;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -42,6 +43,9 @@ public class SaleProductsStepDefinitions {
         this.firstName = firstName;
         this.lastName = lastName;
         this.postalCode = postalCode;
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                RealizaCheckoutTask.sending(firstName, lastName, postalCode)
+        );
 
     }
 
