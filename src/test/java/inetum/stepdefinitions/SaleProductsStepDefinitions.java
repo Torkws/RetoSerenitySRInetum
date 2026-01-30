@@ -1,10 +1,7 @@
 package inetum.stepdefinitions;
 
 import inetum.models.CarritoInfo;
-import inetum.tasks.AgregaProductosTask;
-import inetum.tasks.ObtieneProductosByFilter;
-import inetum.tasks.RealizaCheckoutTask;
-import inetum.tasks.VisualizaProductosEnCarritoTask;
+import inetum.tasks.*;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actors.OnStage;
 
@@ -51,7 +48,9 @@ public class SaleProductsStepDefinitions {
 
     @And("se procesa la confirmación de la compra")
     public void seProcesaLaConfirmacionDeLaCompra() {
-
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ConfirmacionCompraTask.sending()
+        );
     }
 
     @And("debería visualizar la confirmación de la compra")
